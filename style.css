@@ -1,0 +1,249 @@
+/* Wikipedia-style CSS */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #202122;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top bar like Wikipedia */
+body::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: #a2a9b1;
+}
+
+/* Fake Wikipedia header/nav bar */
+.wiki-header {
+    background: #fff;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: #54595d;
+}
+
+/* Page wrapper */
+.wiki-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+    background: #fff;
+    border-left: 1px solid #a2a9b1;
+    border-right: 1px solid #a2a9b1;
+    min-height: 100vh;
+}
+
+/* Title */
+h1 {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+/* Intro paragraphs */
+p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #202122;
+}
+
+/* Links */
+a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0b0080;
+}
+
+a:visited {
+    color: #0b0080;
+}
+
+/* Sections */
+section {
+    margin-top: 24px;
+}
+
+/* Section headings - Wikipedia h2 style */
+section h3 {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    font-size: 19px;
+    font-weight: normal;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+section h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 12px 0 6px;
+    color: #202122;
+}
+
+/* Infobox-style contact box */
+.infobox {
+    float: right;
+    clear: right;
+    margin: 0 0 16px 24px;
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 10px 14px;
+    font-size: 13px;
+    width: 220px;
+    line-height: 1.7;
+}
+
+.infobox-title {
+    background: #cee0f2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px 6px;
+    margin: -10px -14px 10px;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+.infobox p {
+    margin: 0;
+    border-bottom: 1px solid #eaecf0;
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.infobox p:last-child {
+    border-bottom: none;
+}
+
+.infobox .label {
+    color: #54595d;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Table of Contents */
+.toc {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 12px 16px;
+    display: inline-block;
+    margin: 12px 0 20px;
+    font-size: 13px;
+    min-width: 180px;
+}
+
+.toc-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.toc ol {
+    padding-left: 18px;
+    margin: 0;
+    color: #0645ad;
+}
+
+.toc ol li {
+    margin: 2px 0;
+}
+
+.toc a {
+    color: #0645ad;
+}
+
+/* Link list items */
+section a {
+    display: inline;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+section br + a {
+    margin-top: 3px;
+    display: inline-block;
+}
+
+/* Wikipedia-style "stub" notice at bottom */
+.stub-notice {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: #54595d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stub-notice::before {
+    content: '📝';
+    font-size: 20px;
+}
+
+/* Categories box at bottom */
+.categories {
+    border-top: 1px solid #a2a9b1;
+    margin-top: 24px;
+    padding-top: 8px;
+    font-size: 13px;
+    color: #202122;
+}
+
+.categories span {
+    font-weight: bold;
+}
+
+/* Last edited notice */
+.last-edited {
+    font-size: 12px;
+    color: #54595d;
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #eaecf0;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .infobox {
+        float: none;
+        width: 100%;
+        margin: 0 0 16px 0;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
